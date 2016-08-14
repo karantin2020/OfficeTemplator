@@ -1,0 +1,106 @@
+@import '../../Styles/ColorVars.css';
+@import '../../Styles/SizeVars.css';
+
+main.container{
+  min-width: 100%;
+  width: 100%;
+  flex: 1;
+  color: $FontDarkGray;
+  background-color: $BGWhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 24px 0px 24px 0px;
+  .mainContent{
+    min-height: 100%;
+    max-width: 93%;
+    width: $WidthVar;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .mainLeftMenu, .mainRightMenu {
+      width: 15em;
+    }
+    .mainLeftMenu {
+      :global(.ui.vertical.menu) {
+        background-color: $BGGray;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        margin-left: -16px;
+        border-top: 5px solid $FontDarkBlue;
+        border-bottom: 3px solid $BGFocusGray;
+        :global(.item.header) {
+          border-bottom: 1px solid $BGFocusGray;
+          color: $FontDarkGray;
+          font-weight: 700;
+        }
+        :global(.item) {
+          color: $FontDarkBlue;
+          border: 0;
+          border-radius: 0;
+          font-weight: 600;
+          &:global(::before) {
+            display: none !important;
+          }
+          input {
+            line-height: 1.5;
+          }
+          i:global(.icon) {
+            margin: 0;
+            padding-right: 1.5em;
+            float: none
+          }
+        }
+        :global(.item):hover {
+          color: $FontGithubBlue;
+        }
+        .search {
+          border-bottom: 3px solid $BGFocusGray;
+        }
+      }
+    }
+    .mainRightMenu {
+      text-align: right;
+      padding-right: 14px;
+      display: none;
+    }
+    .mainInnerContent {
+      flex: 1;
+      padding: 0 0.8em 0 0.4em;
+      border: 1px solid rgba(34, 36, 38, 0.15);
+      border-radius: 1px;
+    }
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  main.container{
+    .mainContent{
+      .mainLeftMenu {
+        display: none;
+      }
+      .mainRightMenu {
+        display: none;
+      }
+      .mainInnerContent {
+        padding: 0;
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  main.container{
+    .mainContent{
+      .mainLeftMenu {
+
+      }
+      .mainRightMenu {
+        display: none;
+      }
+    }
+  }
+}
